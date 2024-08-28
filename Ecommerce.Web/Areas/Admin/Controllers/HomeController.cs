@@ -8,5 +8,6 @@ namespace Ecommerce.Web.Areas.Admin.Controllers
         public IActionResult Index() => View();
         public IActionResult Rol() => View();
         public IActionResult Product() => View();   
+        public IActionResult Category() => View();  
     }
 }

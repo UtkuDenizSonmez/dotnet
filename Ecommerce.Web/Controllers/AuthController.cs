@@ -22,7 +22,8 @@ namespace Ecommerce.Web.Controllers
                 Repo.Session.Role = (string)result.rol;
 
                 return RedirectToAction("Index", "Home");
-            } else
+            } 
+            else
             {
                 ViewBag.LoginError = result.message;
                 return View("Login");

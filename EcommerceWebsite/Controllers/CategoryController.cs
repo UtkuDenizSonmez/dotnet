@@ -47,6 +47,7 @@ namespace EcommerceWebsite.Controllers
                 data = item             
             };
         }
+
         [Authorize(Roles = "admin, personel")]
         [HttpPost("add-category")]
         public dynamic AddCategory([FromBody] dynamic model)
@@ -55,7 +56,7 @@ namespace EcommerceWebsite.Controllers
 
             Category newCategory = new Category()
             {
-                Id = jason.id,
+                Id = jason.Id,
                 category_name = jason.category_name
             };
 

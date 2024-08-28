@@ -47,7 +47,7 @@ namespace EcommerceWebsite.Controllers
             return new
             {
                 success = true,
-                items = allProducts
+                data = allProducts
             };
         }
 
@@ -63,7 +63,7 @@ namespace EcommerceWebsite.Controllers
             };
         }
 
-        [Authorize(Roles = "admin, personel")]
+        //[Authorize(Roles = "admin, personel")]
         [HttpPost("add-product")]
         public dynamic AddItem([FromBody] dynamic model)
         {
@@ -106,10 +106,18 @@ namespace EcommerceWebsite.Controllers
             }
         }
 
-        [Authorize(Roles = "admin")]
-        [HttpDelete("{id}")]
-        public dynamic DeleteUserById(int id)
+        //[Authorize(Roles = "admin")]
+        [HttpDelete("delete")]
+        public dynamic DeleteProduct(int id)
         {
+            if(id <= 0)
+            {
+                return new
+                {
+                    success = false,
+                    message = "Geçersiz Id"
+                };
+            }
             repo.ProductRepository.DeleteItem(id);
 
             return new

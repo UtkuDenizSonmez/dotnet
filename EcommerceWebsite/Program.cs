@@ -38,7 +38,7 @@ builder.Services.AddAuthentication(x => {
 
 // Add services to the container.
 
-builder.Services.AddDbContext<RepositoryContext>(opts => opts.UseSqlServer("Data Source=DESKTOP-0PFALRP; Initial Catalog=EcommerceWebDb; Integrated Security=True; TrustServerCertificate=True;")); // DB Connection
+builder.Services.AddDbContext<RepositoryContext>(opts => opts.UseSqlServer("Data Source=VEIDRAVONTAE\\SQLEXPRESS; Initial Catalog=EcommerceWebDb; Integrated Security=True; TrustServerCertificate=True;")); // DB Connection
 builder.Services.AddScoped<RepositoryWrapper, RepositoryWrapper>();
 // Actif HttpContext'e eriþebilmek için bunu ekliyoruz
 builder.Services.AddHttpContextAccessor();
